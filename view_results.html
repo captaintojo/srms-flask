@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h3>Student: {{ student.name }} ({{ student.reg_no }})</h3>
+  <p><strong>Department:</strong> {{ student.department }} | <strong>DOB:</strong> {{ student.dob }}</p>
+
+  <form method="post" action="{{ url_for('add_result', sid=student.id) }}" class="row g-2 mb-3">
+    <div class="col-md-5">
+      <input class="form-control" name="course" placeholder="Course code (e.g., CSC201)" required>
+    </div>
+    <div class="col-md-3">
+      <input class="form-control" name="score" placeholder="Score (0-100)" required>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary">Add Result</button>
+    </div>
+  </form>
+
+  <h5>Results</h5>
+  <table class="table">
+    <thead><tr><th>Course</th><th>Score</th><th>Grade</th></tr></thead>
+    <tbody>
+      {% for r in results %}
+        <tr><td>{{ r.course }}</td><td>{{ r.score }}</td><td>{{ r.grade }}</td></tr>
+      {% else %}
+        <tr><td colspan="3">No results yet</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

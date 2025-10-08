@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center">
+    <h3>Admin Dashboard</h3>
+    <a class="btn btn-primary" href="{{ url_for('add_student') }}">Add Student</a>
+  </div>
+  <table class="table mt-3">
+    <thead><tr><th>#</th><th>Reg No</th><th>Name</th><th>Department</th><th>Actions</th></tr></thead>
+    <tbody>
+      {% for s in students %}
+        <tr>
+          <td>{{ s.id }}</td>
+          <td>{{ s.reg_no }}</td>
+          <td>{{ s.name }}</td>
+          <td>{{ s.department }}</td>
+          <td>
+            <a class="btn btn-sm btn-info" href="{{ url_for('view_results', sid=s.id) }}">View</a>
+          </td>
+        </tr>
+      {% else %}
+        <tr><td colspan="5">No students yet</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
