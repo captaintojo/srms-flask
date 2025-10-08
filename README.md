@@ -1,15 +1,15 @@
-# Student Result Management System (SRMS)
+# Student Result Management System (Flask)
 
-A simple academic-style web app built with Flask (Python) and SQLite3 for managing student results.
-Admin can log in, add students, record results, and view them in a clean table.
+A simple Flask-based web application for managing students, subjects, and exam results.  
+Includes admin login authentication, student record management, and automatic result generation.
 
-**Login Credentials:**
-- Username: admin
-- Password: admin123
+### 🔧 Technologies
+- Python 3.x
+- Flask
+- SQLite
+- HTML, CSS, JavaScript
 
-**Run locally:**
-```
-pip install -r requirements.txt
-python app.py
-```
-Then open: http://127.0.0.1:5000
+### 🚀 Running the Project
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/captaintojo/srms-flask.git
